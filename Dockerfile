@@ -11,4 +11,5 @@ COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80 443
 STOPSIGNAL SIGTERM
 
+RUN nginx -V
 CMD ["nginx", "-g", "daemon off;"]

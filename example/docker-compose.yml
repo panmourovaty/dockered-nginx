@@ -1,0 +1,12 @@
+version: "3"
+services:
+  nginx:
+    image: panmourovaty/dockered-nginx
+    ports:
+     - 80:80
+     - 443:443
+    volumes:
+      - ./conf:/etc/nginx-mainline/conf.d
+      - ./certs:/opt/certs
+      - ./www:/var/www
+    restart: unless-stopped

@@ -50,7 +50,6 @@ RUN mkdir -p /var/www/html && \
     ln -sf /dev/stderr /var/log/nginx-mainline/error.log && \
     cp -f /usr/share/nginx-mainline/html/* /var/www/html/
 
-RUN addgroup --system nginx
 RUN adduser \
           --system \
           --disabled-login \

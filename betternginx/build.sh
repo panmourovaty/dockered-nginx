@@ -11,7 +11,7 @@ cd nginx-quic
 --with-http_v2_module \
 --with-cc-opt="-I.../openssl/build/include" \
 --with-ld-opt="-L.../openssl/build/lib" \
---with-openssl=../quictls \
+--with-openssl=../openssl \
 --with-openssl-opt=enable-ktls \
 --add-module=../ngx_brotli \
 --prefix=/etc/nginx \

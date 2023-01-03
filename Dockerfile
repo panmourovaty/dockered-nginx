@@ -30,6 +30,7 @@ FROM clearlinux/os-core:latest
 
 COPY --from=builder /install_root /
 COPY nginx.conf /etc/nginx-mainline/nginx.conf
+COPY mime.types /etc/nginx-mainline/mime.types
 
 # create directories for nginx-mainline
 RUN mkdir -p /var/www/html && \

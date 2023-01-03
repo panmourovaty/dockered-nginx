@@ -1,4 +1,5 @@
 FROM debian:sid-slim AS builder
+ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get dist-upgrade -y
 COPY ./betternginx /opt/betternginx
 RUN sh /opt/betternginx/build.sh

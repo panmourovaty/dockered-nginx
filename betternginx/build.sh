@@ -61,4 +61,4 @@ dpkg-deb --root-owner-group --build betternginxdebian
 apt-get install ./betternginxdebian.deb -y
 cd ../
 rm -rf ./betternginx
-apt-get autoremove -y mercurial git build-essential libbrotli-dev libpcre3-dev zlib1g-dev
+apt-get autoremove -y mercurial git build-essential libpcre3-dev zlib1g-dev

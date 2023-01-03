@@ -8,6 +8,9 @@ RUN sh /opt/betternginx/build.sh
 # Copy main config
 COPY nginx.conf /etc/nginx/nginx.conf
 
+# Fix nginx log permissions
+RUN chown -R nginx:nginx /var/log/nginx; && sudo chmod -R 755 /var/log/nginx;
+
 EXPOSE 80 443
 STOPSIGNAL SIGTERM
 

@@ -1,6 +1,6 @@
 #!/bin/sh
 apt-get update
-apt-get install -y git mercurial build-essential brotli libbrotli-dev libpcre3-dev libpcre3
+apt-get install -y git mercurial build-essential brotli libbrotli-dev libpcre3-dev libpcre3 zlib
 hg clone https://hg.nginx.org/nginx-quic -r quic
 git clone https://github.com/quictls/openssl.git
 git clone https://github.com/google/ngx_brotli.git

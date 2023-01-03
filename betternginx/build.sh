@@ -1,6 +1,6 @@
 #!/bin/sh
 apt-get update
-apt-get install git mercurial build-essential -y
+apt-get install -y git mercurial build-essential brotli libbrotli-dev
 hg clone https://hg.nginx.org/nginx-quic -r quic
 git clone https://github.com/quictls/openssl.git
 git clone https://github.com/google/ngx_brotli.git
@@ -61,4 +61,4 @@ dpkg-deb --root-owner-group --build betternginxdebian
 apt-get install ./betternginxdebian.deb -y
 cd ../
 rm -rf ./betternginx
-apt-get autoremove -y mercurial git build-essentials
+apt-get autoremove -y mercurial git build-essential libbrotli-dev

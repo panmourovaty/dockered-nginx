@@ -48,7 +48,6 @@ RUN mkdir -p /var/www/html && \
     # forward request and error logs to docker log collector
     ln -sf /dev/stdout /var/log/nginx-mainline/access.log && \
     ln -sf /dev/stderr /var/log/nginx-mainline/error.log && \
-    cp -f /usr/share/nginx-mainline/conf/nginx.conf.example /etc/nginx-mainline/nginx.conf && \
     cp -f /usr/share/nginx-mainline/html/* /var/www/html/
 
 EXPOSE 80 443

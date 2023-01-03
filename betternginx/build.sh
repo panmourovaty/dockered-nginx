@@ -1,7 +1,7 @@
 #!/bin/sh
 cd /opt/betternginx
 apt-get update
-apt-get install -y git mercurial build-essential brotli libbrotli-dev libpcre3-dev libpcre3 zlib1g-dev zlib1g libaio
+apt-get install -y git mercurial build-essential brotli libbrotli-dev libpcre3-dev libpcre3 zlib1g-dev zlib1g
 hg clone https://hg.nginx.org/nginx-quic -r quic
 git clone https://github.com/quictls/openssl.git
 git clone https://github.com/google/ngx_brotli.git

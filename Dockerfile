@@ -50,15 +50,7 @@ RUN mkdir -p /var/www/html && \
     ln -sf /dev/stderr /var/log/nginx-mainline/error.log && \
     cp -f /usr/share/nginx-mainline/html/* /var/www/html/
 
-RUN adduser \
-          --system \
-          --disabled-login \
-          --ingroup nginx \
-          --no-create-home \
-          --home /nonexistent \
-          --gecos "nginx user" \
-          --shell /bin/false \
-          nginx
+RUN useradd --shell /bin/false nginx
 
 EXPOSE 80 443
 STOPSIGNAL SIGTERM

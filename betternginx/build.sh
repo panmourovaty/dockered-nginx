@@ -1,7 +1,7 @@
 #!/bin/sh
 apt-get update
 apt-get install git mercurial build-essential -y
-hg clone https://hg.nginx.org/nginx-quic
+hg clone https://hg.nginx.org/nginx-quic -r quic
 git clone https://github.com/quictls/openssl.git
 git clone https://github.com/google/ngx_brotli.git
 git clone 

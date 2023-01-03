@@ -3,7 +3,7 @@ Version: 1.0
 Architecture: amd64
 Maintainer: panmourovaty
 Installed-Size: 3059
-Depends: libc6, libcrypt1, libpcre2-8-0, libssl1.1, zlib1g, lsb-base, adduser
+Depends: libc6, libcrypt, libpcre3, libssl, zlib1g, lsb-base, adduser
 Conflicts: nginx-common, nginx-core
 Replaces: nginx-common, nginx-core
 Provides: httpd, nginx

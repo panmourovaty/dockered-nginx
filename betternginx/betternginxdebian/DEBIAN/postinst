@@ -76,6 +76,8 @@ if [ "$1" = "configure" ] || [ "$1" = "abort-upgrade" ] || [ "$1" = "abort-decon
 	# up on purge. Also remove old symlinks.
 	deb-systemd-helper update-state 'nginx-debug.service' >/dev/null || true
 fi
+chown -R nginx /logs
+chmod -R 755 /logs
 # End automatically added section
 
 

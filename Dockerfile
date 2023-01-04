@@ -3,6 +3,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && apt-get dist-upgrade -y
 RUN apt-get install -y apt-utils
 COPY ./betternginx /opt/betternginx
+RUN mkdir /logs
 RUN sh /opt/betternginx/build.sh
 
 # Copy main config

@@ -5,7 +5,7 @@ apt-get install -y git mercurial build-essential brotli libbrotli-dev libpcre3-d
 hg clone http://hg.nginx.org/nginx
 git clone https://github.com/quictls/openssl.git
 git clone https://github.com/google/ngx_brotli.git
-cd nginx-quic
+cd nginx
 ./auto/configure \
 --with-http_v3_module \
 --with-stream_quic_module \
@@ -55,7 +55,7 @@ cd nginx-quic
 --with-ld-opt='-Wl,-z,relro -Wl,-z,now -Wl,--as-needed -pie'
 make
 cd ../
-mv ./nginx-quic/objs/nginx ./betternginxdebian/usr/sbin/nginx
+mv ./nginx/objs/nginx ./betternginxdebian/usr/sbin/nginx
 chmod +x ./betternginxdebian/usr/sbin/nginx
 dpkg-deb --root-owner-group --build betternginxdebian
 apt-get install ./betternginxdebian.deb -y

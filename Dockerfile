@@ -9,7 +9,7 @@ RUN sh /opt/betternginx/build.sh
 # Copy main config
 COPY nginx.conf /etc/nginx/nginx.conf
 
-RUN adduser --disabled-password --gecos "" nginx && mkdir -p /logs && chown -R nginx:nginx /logs && \
+RUN mkdir -p /logs && chown -R nginx:nginx /logs && \
     mkdir -p /var/cache/nginx && chown -R nginx:nginx /var/cache/nginx
     
 EXPOSE 80 443

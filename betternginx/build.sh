@@ -56,8 +56,6 @@ make
 cd ../
 mv ./nginx/objs/nginx ./betternginxdebian/usr/sbin/nginx
 chmod +x ./betternginxdebian/usr/sbin/nginx
+ls -la
+pwd
 dpkg-deb --root-owner-group --build betternginxdebian
-apt-get install ./betternginxdebian.deb -y
-cd ../
-rm -rf ./betternginx
-apt-get autoremove -y mercurial git build-essential libpcre3-dev zlib1g-dev

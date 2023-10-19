@@ -8,7 +8,6 @@ git clone https://github.com/google/ngx_brotli.git
 cd nginx
 ./auto/configure \
 --with-http_v3_module \
---with-stream_quic_module \
 --with-http_v2_module \
 --with-cc-opt="-I.../openssl/build/include" \
 --with-ld-opt="-L.../openssl/build/lib" \

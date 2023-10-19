@@ -56,6 +56,6 @@ make
 cd ../
 mv ./nginx/objs/nginx ./betternginxdebian/usr/sbin/nginx
 chmod +x ./betternginxdebian/usr/sbin/nginx
+dpkg-deb --root-owner-group --build betternginxdebian
 ls -la
 pwd
-dpkg-deb --root-owner-group --build betternginxdebian

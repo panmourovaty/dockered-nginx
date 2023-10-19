@@ -7,7 +7,7 @@ COPY ./betternginx /opt/betternginx
 RUN sh /opt/betternginx/build.sh
 
 FROM debian:bookworm-slim
-COPY --from=builder /opt/betternginx/betternginxdebian.deb /opt/betternginxdebian.deb
+COPY --from=builder /opt/betternginx/nginx/betternginxdebian.deb /opt/betternginxdebian.deb
 
 RUN apt-get install -y /opt/betternginxdebian.deb && rm -f /opt/betternginxdebian.deb && mkdir -p /var/cache/nginx && chown -R nginx:nginx /var/cache/nginx
     

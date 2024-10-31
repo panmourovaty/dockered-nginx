@@ -2,7 +2,7 @@
 cd /opt/betternginx
 apt-get update
 apt-get install -y git mercurial build-essential brotli libbrotli-dev libpcre2-dev libpcre3-dev libpcre3 zlib1g-dev zlib1g
-hg clone http://hg.nginx.org/nginx -r release-1.26.1
+hg clone http://hg.nginx.org/nginx -r release-1.27.2
 git clone --recursive https://github.com/quictls/openssl.git
 git clone --recursive https://github.com/google/ngx_brotli.git
 cd nginx

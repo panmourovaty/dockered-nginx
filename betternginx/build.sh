@@ -5,6 +5,7 @@ apt-get install -y git mercurial build-essential brotli libbrotli-dev libpcre2-d
 hg clone http://hg.nginx.org/nginx -r release-1.27.2
 git clone --recursive https://github.com/quictls/openssl.git
 git clone --recursive https://github.com/google/ngx_brotli.git
+git clone --recursive https://github.com/openresty/headers-more-nginx-module.git
 cd nginx
 ./auto/configure \
 --with-http_v3_module \
@@ -14,6 +15,7 @@ cd nginx
 --with-openssl=../openssl \
 --with-openssl-opt=enable-ktls \
 --add-module=../ngx_brotli \
+--add-module=../headers-more-nginx-module \
 --prefix=/etc/nginx \
 --sbin-path=/usr/sbin/nginx \
 --modules-path=/usr/lib/nginx/modules \

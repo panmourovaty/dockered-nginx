@@ -1,11 +1,11 @@
 #!/bin/sh
 cd /opt/betternginx
 apt-get update
-apt-get install -y git mercurial build-essential brotli libbrotli-dev libpcre2-dev libpcre3-dev libpcre3 zlib1g-dev zlib1g
-hg clone http://hg.nginx.org/nginx -r release-1.27.2
-git clone --recursive https://github.com/quictls/openssl.git
-git clone --recursive https://github.com/google/ngx_brotli.git
-git clone --recursive https://github.com/openresty/headers-more-nginx-module.git
+apt-get install -y git build-essential brotli libbrotli-dev libpcre2-dev libpcre3-dev libpcre3 zlib1g-dev zlib1g
+git clone --recursive --depth 1 --branch release-1.27.2 https://github.com/nginx/nginx.git
+git clone --recursive --depth 1 https://github.com/quictls/openssl.git
+git clone --recursive --depth 1 https://github.com/google/ngx_brotli.git
+git clone --recursive --depth 1 https://github.com/openresty/headers-more-nginx-module.git
 cd nginx
 ./auto/configure \
 --with-http_v3_module \

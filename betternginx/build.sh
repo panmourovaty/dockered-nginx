@@ -2,7 +2,7 @@
 cd /opt/betternginx
 apt-get update
 apt-get install -y git build-essential brotli libbrotli-dev libpcre2-dev libpcre3-dev libpcre3 zlib1g-dev zlib1g
-git clone --recursive --depth 1 --branch release-1.27.2 https://github.com/nginx/nginx.git
+git clone --recursive --depth 1 --branch release-1.27.4 https://github.com/nginx/nginx.git
 git clone --recursive --depth 1 https://github.com/quictls/openssl.git
 git clone --recursive --depth 1 https://github.com/google/ngx_brotli.git
 git clone --recursive --depth 1 https://github.com/openresty/headers-more-nginx-module.git

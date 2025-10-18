@@ -1,4 +1,3 @@
-
 name: Docker Image CI
 
 on:
@@ -21,4 +20,16 @@ jobs:
       run: |
         echo "${{ secrets.DOCKERPW }}" | docker login -u "panmourovaty" --password-stdin
         docker image build -t panmourovaty/dockered-nginx:latest .
+    - name: Extract DEB file
+      run: |
+        id=$(docker create panmourovaty/dockered-nginx:latest)
+        docker cp $id:/nginx.deb ./nginx.deb
+        docker rm $id
+    - name: Upload DEB as artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: nginx-custom
+        path: nginx.deb
+    - name: Push Docker image
+      run: |
         docker push panmourovaty/dockered-nginx:latest

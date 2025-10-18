@@ -7,10 +7,7 @@ git clone --recursive --depth 1 https://github.com/google/boringssl.git
 git clone --recursive --depth 1 https://github.com/google/ngx_brotli.git
 git clone --recursive --depth 1 https://github.com/openresty/headers-more-nginx-module.git
 git clone --recursive --depth 1 https://github.com/tokers/zstd-nginx-module.git
-cd boringssl
-cmake -B build
-cmake --build build
-cd ../nginx
+cd nginx
 ./auto/configure \
 --with-http_v3_module \
 --with-http_v2_module \

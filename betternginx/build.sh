@@ -3,7 +3,7 @@ cd /opt/betternginx
 apt-get update
 apt-get install -y git build-essential brotli libbrotli-dev libpcre2-dev zlib1g-dev zlib1g libzstd-dev
 git clone --recursive --depth 1 --branch release-1.29.2 https://github.com/nginx/nginx.git
-git clone --recursive --depth 1 https://github.com/google/boringssl.git
+git clone --recursive --depth 1 https://github.com/openssl/openssl.git
 git clone --recursive --depth 1 https://github.com/google/ngx_brotli.git
 git clone --recursive --depth 1 https://github.com/openresty/headers-more-nginx-module.git
 git clone --recursive --depth 1 https://github.com/tokers/zstd-nginx-module.git
@@ -11,9 +11,7 @@ cd nginx
 ./auto/configure \
 --with-http_v3_module \
 --with-http_v2_module \
---with-cc-opt="-I../boringssl/include" \
---with-ld-opt="-L../boringssl/build" \
---with-openssl=../boringssl \
+--with-openssl=../openssl \
 --with-openssl-opt=enable-ktls \
 --add-module=../ngx_brotli \
 --add-module=../zstd-nginx-module \
@@ -53,8 +51,8 @@ cd nginx
 --with-stream \
 --with-stream_realip_module \
 --with-stream_ssl_module \
---with-stream_ssl_preread_module -\
--with-cc-opt='-g -O3 -flto -march=x86-64-v2 -ffile-prefix-map=/data/builder/debuild/nginx/debian/debuild-base/nginx=. -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' \
+--with-stream_ssl_preread_module \
+--with-cc-opt='-g -O3 -flto -march=x86-64-v2 -ffile-prefix-map=/data/builder/debuild/nginx/debian/debuild-base/nginx=. -fstack-protector-strong -Wformat -Werror=format-security -Wp,-D_FORTIFY_SOURCE=2 -fPIC' \
 --with-ld-opt='-Wl,-z,relro -Wl,-z,now -Wl,--as-needed -pie'
 make
 cd ../

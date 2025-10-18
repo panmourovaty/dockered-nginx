@@ -7,12 +7,15 @@ git clone --recursive --depth 1 https://github.com/google/boringssl.git
 git clone --recursive --depth 1 https://github.com/google/ngx_brotli.git
 git clone --recursive --depth 1 https://github.com/openresty/headers-more-nginx-module.git
 git clone --recursive --depth 1 https://github.com/tokers/zstd-nginx-module.git
-cd nginx
+cd boringssl
+cmake -B build
+cmake --build build
+cd ../nginx
 ./auto/configure \
 --with-http_v3_module \
 --with-http_v2_module \
---with-cc-opt="-I.../opequictlsnssl/build/include" \
---with-ld-opt="-L.../quictls/build/lib" \
+--with-cc-opt="-I../boringssl/include" \
+--with-ld-opt="-L../boringssl/build" \
 --with-openssl=../boringssl \
 --with-openssl-opt=enable-ktls \
 --add-module=../ngx_brotli \

@@ -1,5 +1,5 @@
 FROM debian:trixie-slim AS builder
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get dist-upgrade -y
 RUN apt-get install -y apt-utils
 COPY ./betternginx /opt/betternginx

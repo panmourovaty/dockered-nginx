@@ -1,11 +1,12 @@
 #!/bin/sh
 cd /opt/betternginx
 apt-get update
-apt-get install -y git build-essential brotli libbrotli-dev libpcre2-dev libpcre3-dev libpcre3 zlib1g-dev zlib1g
+apt-get install -y git build-essential brotli libbrotli-dev libpcre2-dev libpcre3-dev libpcre3 zlib1g-dev zlib1g libzstd-dev
 git clone --recursive --depth 1 --branch release-1.27.4 https://github.com/nginx/nginx.git
 git clone --recursive --depth 1 https://github.com/quictls/openssl.git
 git clone --recursive --depth 1 https://github.com/google/ngx_brotli.git
 git clone --recursive --depth 1 https://github.com/openresty/headers-more-nginx-module.git
+git clone --recursive --depth 1 https://github.com/tokers/zstd-nginx-module.git
 cd nginx
 ./auto/configure \
 --with-http_v3_module \
@@ -15,6 +16,7 @@ cd nginx
 --with-openssl=../openssl \
 --with-openssl-opt=enable-ktls \
 --add-module=../ngx_brotli \
+--add-module=../zstd-nginx-module \
 --add-module=../headers-more-nginx-module \
 --prefix=/etc/nginx \
 --sbin-path=/usr/sbin/nginx \

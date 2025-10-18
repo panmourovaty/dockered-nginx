@@ -29,17 +29,7 @@ case "$1" in
         cat <<BANNER
 ----------------------------------------------------------------------
 
-Thanks for using nginx!
-
-Please find the official documentation for nginx here:
-* https://nginx.org/en/docs/
-
-Please subscribe to nginx-announce mailing list to get
-the most important news about nginx:
-* https://nginx.org/en/support.html
-
-Commercial subscriptions for nginx are available on:
-* https://nginx.com/products/
+Thanks for using betternginx!
 
 ----------------------------------------------------------------------
 BANNER
